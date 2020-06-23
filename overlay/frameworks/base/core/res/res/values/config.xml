@@ -212,10 +212,6 @@
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">M -270,0 L -270,86 L 270,86 L 270,0 Z</string>
 
-    <!-- Height of the status bar -->
-    <dimen name="status_bar_height_portrait">86.0px</dimen>
-    <dimen name="status_bar_height_landscape">24.0dp</dimen>
-    <dimen name="rounded_corner_radius_top">104px</dimen>
 
     <!-- Whether device ignores the RSSNR signal implementation -->
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
@@ -238,4 +234,74 @@
 
     <!-- Whether to intercept inputs on screen off -->
     <bool name="config_enableKeyHandler">true</bool>
+
+    <!-- Height of the status bar -->
+    <!-- dimen name="status_bar_height">48dp</dimen -->
+    <dimen name="status_bar_height_portrait">90px</dimen>
+    <!-- dimen name="status_bar_height_landscape">48dp</dimen -->
+    <dimen name="rounded_corner_radius_top">104px</dimen>
+
+    <!-- Height of notification icons in the status bar -->
+    <!-- dimen name="status_bar_icon_size">22dip</dimen -->
+    <!-- dimen name="status_bar_icon_size">17dip</dimen -->
+
+    <!-- dimen name="status_bar_system_icon_size">15dp</dimen -->
+    <!-- dimen name="status_bar_system_icon_size">13dp</dimen -->
+    <!-- dimen name="status_bar_system_icon_intrinsic_size">17dp</dimen -->
+    <dimen name="status_bar_system_icon_intrinsic_size">14dp</dimen>
+
+    <!-- size at which Notification icons will be drawn in the status bar -->
+    <!-- dimen name="status_bar_icon_size">15dip</dimen -->
+
+    <dimen name="net_traffic_txt_img_padding">0dp</dimen>
+    <dimen name="net_traffic_multi_text_size">7dp</dimen>
+
+    <!-- gap on either side of status bar notification icons -->
+    <dimen name="status_bar_icon_padding">0dp</dimen>
+
+    <!-- the padding on the start of the statusbar -->
+    <dimen name="status_bar_padding_start">2dp</dimen>
+
+    <!-- the padding on the end of the statusbar -->
+    <dimen name="status_bar_padding_end">2dp</dimen>
+
+    <!-- Default horizontal drawable padding for status bar icons. -->
+    <dimen name="status_bar_horizontal_padding">1dp</dimen>
+
+    <!-- The font size for the clock in the status bar. -->
+    <dimen name="status_bar_clock_size_dlsb">10sp</dimen>
+
+    <dimen name="signal_icon_size">10dp</dimen>
+
+    <!-- Size of the view displaying the wifi signal icon in the status bar. -->
+    <dimen name="status_bar_wifi_signal_size">10dp</dimen>
+
+    <!-- The amount to scale each of the status bar icons by. A value of 1 means no scaling. -->
+    <item name="status_bar_icon_scale_factor" format="float" type="dimen">0.5</item>
+
+    <!-- Default state for LiveDisplay -->
+    <bool name="config_liveDisplayAvailable">true</bool>
+
+    <!-- Use default display mode -->
+    <integer name="config_defaultLiveDisplayMode">38</integer>
+
+    <!-- Display mode remapping table.
+         If the mode names returned by the backend do not match
+         the predefined and translated strings in the Settings
+         app, they can be remapped here. The format is
+         "oldname:newname", one per entry. -->
+    <string-array name="config_displayModeMappings">
+        <item>38oled_native:Standard</item><!-- 38 -->
+        <item>OLED_native:Standard</item><!-- 38 -->
+        <item>00default:Dynamic</item> <!-- 0 -->
+        <item>36srgb_native:Cinema</item> <!-- 37 -->
+        <item>sRGB_native:Cinema</item> <!-- 37 -->
+        <item>srgb_d65:Photography</item> <!-- 3 -->
+        <item>sRGB_d65:Photography</item> <!-- 3 -->
+        <item>HDR_P3_standard:HDR</item>  <!-- 39 -->
+        <item>native:Basic</item> <!-- 40 -->
+    </string-array>
+
+    <!-- Should we filter any display modes which are unampped? -->
+    <bool name="config_filterDisplayModes">true</bool>
 </resources>
