@@ -16,9 +16,9 @@
 ** See the License for the specific language governing permissions and
 ** limitations under the License.
 */
+
 -->
+
 <resources>
-
-
-
+<dimen name="status_bar_height_portrait">94px</dimen>
 </resources>
