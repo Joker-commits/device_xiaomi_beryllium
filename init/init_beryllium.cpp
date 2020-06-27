@@ -1,5 +1,5 @@
 /*
-   Copyright (c) 2013, The Linux Foundation. All rights reserved.
+   Copyright (c) 2014, The Linux Foundation. All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -27,49 +27,37 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <vector>
-
+#include <stdlib.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
 #include <android-base/properties.h>
-#include <android-base/logging.h>
-
 #include "property_service.h"
 #include "vendor_init.h"
 
-using android::base::GetProperty;
 using android::init::property_set;
 
-std::vector<std::string> ro_props_default_source_order = {
-    "",
-    "odm.",
-    "product.",
-    "system.",
-    "vendor.",
-};
-
-void property_override(char const prop[], char const value[], bool add = true)
+void property_override(char const prop[], char const value[])
 {
     prop_info *pi;
 
     pi = (prop_info*) __system_property_find(prop);
     if (pi)
         __system_property_update(pi, value, strlen(value));
-    else if (add)
+    else
         __system_property_add(prop, strlen(prop), value, strlen(value));
+}
+
+void property_override_dual(char const system_prop[], char const vendor_prop[],
+    char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
 }
 
 void vendor_load_properties()
 {
-    const auto set_ro_build_prop = [](const std::string &source,
-            const std::string &prop, const std::string &value) {
-        auto prop_name = "ro." + source + "build." + prop;
-        property_override(prop_name.c_str(), value.c_str(), false);
-    };
-
-    property_override("ro.vendor.build.security_patch", "2018-07-01");
-    for (const auto &source : ro_props_default_source_order) {
-        set_ro_build_prop(source, "fingerprint", "Xiaomi/beryllium/beryllium:8.1.0/OPM1.171019.011/V9.6.14.0.OEJMIFD:user/release-keys");
-        }
+    // fingerprint
+    property_override("ro.build.description", "beryllium-user 9 PKQ1.180729.001 V10.2.3.0.PEJMIXM release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
 }
