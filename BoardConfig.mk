@@ -34,7 +34,7 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_beryllium
 TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_beryllium
 
 # Kernel
-TARGET_KERNEL_CONFIG := beryllium_defconfig
+TARGET_KERNEL_CONFIG := stealth_defconfig
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
