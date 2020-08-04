@@ -31,3 +31,6 @@ COLT_DEVICE_MAINTAINER := Mani♥Madhuri
 
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080x2246
+
+# Lawnchair
+LAWNCHAIR_OPTOUT=true
