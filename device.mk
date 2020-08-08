@@ -94,4 +94,5 @@ PRODUCT_PACKAGES += \
 
 # Override Apps
 PRODUCT_PACKAGES += \
-    DuckDuckGo
+    DuckDuckGo \
+    bromite-webview
