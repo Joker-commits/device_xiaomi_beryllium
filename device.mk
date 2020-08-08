@@ -91,3 +91,7 @@ PRODUCT_COPY_FILES += \
 # PocketMode
 PRODUCT_PACKAGES += \
     XiaomiPocketMode
+
+# Override Apps
+PRODUCT_PACKAGES += \
+    DuckDuckGo
