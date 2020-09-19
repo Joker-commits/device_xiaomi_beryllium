@@ -39,16 +39,15 @@
     <!-- Padding between signal cluster and battery icon -->
     <dimen name="signal_cluster_battery_padding">4dp</dimen>
 
-    <!-- Spacing after the wifi signals that is present if there are any icons following it. -->
-    <dimen name="status_bar_wifi_signal_spacer_width">1dp</dimen>
-
-    <!-- Spacing before the airplane mode icon if there are any icons preceding it. -->
-    <dimen name="status_bar_airplane_spacer_width">1dp</dimen>
-
     <!-- Size of the view displaying the wifi signal icon in the status bar. -->
     <dimen name="status_bar_wifi_signal_size">16dip</dimen>
 
     <!-- size at which Notification icons will be drawn in the status bar -->
     <dimen name="status_bar_icon_drawing_size">11dp</dimen>
 
+    <!-- The starting padding for the clock in the status bar. -->
+    <dimen name="status_bar_clock_starting_padding">2.5dp</dimen>
+
+    <!-- End padding for left-aligned status bar clock -->
+    <dimen name="status_bar_left_clock_end_padding">2.5dp</dimen>
 </resources>
