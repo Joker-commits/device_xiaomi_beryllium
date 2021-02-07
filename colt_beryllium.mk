@@ -6,11 +6,11 @@
 
 $(call inherit-product, device/xiaomi/beryllium/device.mk)
 
-# Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+# Inherit some common Colt stuff.
+$(call inherit-product, vendor/colt/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := aosip_beryllium
+PRODUCT_NAME := colt_beryllium
 PRODUCT_DEVICE := beryllium
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := POCO F1
@@ -23,3 +23,10 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="beryllium"
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi-rev1
+
+# ColtOS stuffs
+COLT_BUILD_TYPE := Official
+COLT_DEVICE_MAINTAINER := Mani♥Madhuri
+
+# Bootanimation
+TARGET_BOOT_ANIMATION_RES := 1080x2246
