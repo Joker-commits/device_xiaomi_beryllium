@@ -27,6 +27,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi-rev1
 # ColtOS stuffs
 COLT_BUILD_TYPE := Official
 COLT_DEVICE_MAINTAINER := Mani♥Madhuri
+ro.colt.cpu=SDM845
 
 # Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080x2246
